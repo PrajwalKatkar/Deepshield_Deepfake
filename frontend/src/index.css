@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#0A0D14] text-slate-100 antialiased;
+  }
+}
+
+/* Custom Tactical Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0E121B;
+}
+::-webkit-scrollbar-thumb {
+  background: #1C2433;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #10B981;
+}
