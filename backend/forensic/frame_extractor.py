@@ -36,8 +36,8 @@ def extract_and_analyze_frames(analysis_id: str, file_path: str, media_type: str
             "timestamp_str": "00:00.00",
             "suspicion_score": score,
             "is_suspicious": score > 50.0,
-            "image_url": f"/static/frames/{analysis_id}/{frame_name}",
-            "heatmap_url": f"/static/frames/{analysis_id}/{heatmap_name}",
+            "image_url": f"https://deepshield-deepfake.onrender.com/static/frames/{analysis_id}/{frame_name}",
+            "heatmap_url": f"https://deepshield-deepfake.onrender.com/static/frames/{analysis_id}/{heatmap_name}",
             "detected_anomalies": ["Facial boundary inconsistency", "Unnatural skin texture", "Eye region artifact"] if score > 50 else []
         })
         return results
@@ -87,8 +87,8 @@ def extract_and_analyze_frames(analysis_id: str, file_path: str, media_type: str
                 "timestamp_str": ts_str,
                 "suspicion_score": score,
                 "is_suspicious": score > 50.0,
-                "image_url": f"/static/frames/{analysis_id}/{frame_name}",
-                "heatmap_url": f"/static/frames/{analysis_id}/{heatmap_name}",
+                "image_url": f"https://deepshield-deepfake.onrender.com/static/frames/{analysis_id}/{frame_name}",
+                "heatmap_url": f"https://deepshield-deepfake.onrender.com/static/frames/{analysis_id}/{heatmap_name}",
                 "detected_anomalies": ["Facial boundary inconsistency", "Temporal artifact", "Lighting mismatch"] if score > 50.0 else []
             })
         return results
@@ -136,8 +136,8 @@ def extract_and_analyze_frames(analysis_id: str, file_path: str, media_type: str
                 "timestamp_str": ts_str,
                 "suspicion_score": score,
                 "is_suspicious": score > 50.0,
-                "image_url": f"/static/frames/{analysis_id}/{frame_name}",
-                "heatmap_url": f"/static/frames/{analysis_id}/{heatmap_name}",
+                "image_url": f"https://deepshield-deepfake.onrender.com/static/frames/{analysis_id}/{frame_name}",
+                "heatmap_url": f"https://deepshield-deepfake.onrender.com/static/frames/{analysis_id}/{heatmap_name}",
                 "detected_anomalies": ["Unnatural facial texture", "Temporal frame discontinuity"] if score > 50.0 else []
             })
             saved_count += 1
