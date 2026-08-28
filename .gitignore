@@ -22,3 +22,8 @@ Thumbs.db
 .vscode/
 .idea/
 *.log
+.venv311/
+aegis_source/
+backend/models/
+__pycache__/
+*.pyc

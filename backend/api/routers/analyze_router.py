@@ -16,7 +16,7 @@ from backend.forensic.hash_utils import calculate_sha256
 from backend.forensic.metadata_extractor import extract_media_metadata
 from backend.forensic.frame_extractor import extract_and_analyze_frames
 from backend.forensic.audio_forensics import analyze_audio_track
-from backend.detectors.demo_detector import DemoDetector
+from backend.detectors.real_detector import RealDeepfakeDetector
 from backend.detectors.ensemble import EnsembleEngine
 from backend.reports.pdf_generator import generate_forensic_pdf_report
 
@@ -54,8 +54,8 @@ async def analyze_media(
     metadata = extract_media_metadata(str(saved_path), media_type)
     
     # 2. Multi-model Forensic Detection Engine
-    detector = DemoDetector()
-    detector_results = detector.analyze(file.filename, media_type, metadata)
+    detector = RealDeepfakeDetector()
+    detector_results = detector.analyze(str(saved_path), media_type, metadata)
     
     # 3. Ensemble Engine Aggregation
     ensemble = EnsembleEngine()
@@ -100,7 +100,7 @@ async def analyze_media(
         metadata_info=metadata,
         audio_info=audio_info,
         multi_face_info=detector_results["multi_face_info"],
-        is_demo=True
+        is_demo=False
     )
     db.add(analysis)
     
